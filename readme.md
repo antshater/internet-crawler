@@ -33,7 +33,7 @@ Shows list of jobs
   200 - [
           {
             id: 1,
-            status: pendind | downloading | complete | error
+            status: pending | downloading | complete | error
             url: http://original.com/file
             result_url: http://internet-crawler.local/download.csv
             error: string | null
