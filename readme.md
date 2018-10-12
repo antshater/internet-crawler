@@ -14,7 +14,7 @@ docker-compose exec php composer install
 open http://internet-crawler.local in browser
 ```
 
-##Api
+## Api
 
 Api call creates new delayed job for file downloading
 ```
@@ -26,7 +26,7 @@ Api call creates new delayed job for file downloading
   422 - {url: error message}
 ```
 
-##Command
+## Command
 Command creates new delayed job for file downloading
 ```
 docker-compose exec php php artisan app:download-file
