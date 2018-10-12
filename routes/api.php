@@ -17,4 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/tasks', 'Api\ApiTasksController@store');
+Route::name('api.')->group(function () {
+    Route::resource('tasks', 'Api\ApiTasksController')->only(['store', 'index']);
+});
+

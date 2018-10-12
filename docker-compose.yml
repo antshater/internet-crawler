@@ -20,7 +20,7 @@ services:
     ports:
       - "9003:5432"
     volumes:
-      - postgres_data_123:/var/lib/postgresql/data
+      - internet_crawler:/var/lib/postgresql/data
   horizon:
     build: ./docker/php
     command: /usr/bin/env php artisan horizon
@@ -29,5 +29,5 @@ services:
   redis:
     image: redis
 volumes:
-  postgres_data_123:
+  internet_crawler:
     driver: "local"

@@ -11,4 +11,5 @@
 |
 */
 
-Route::resource('/', 'TasksController')->only(['index', 'store']);
+Route::get('/', 'TasksController@index');
+Route::post('/', 'TasksController@store');

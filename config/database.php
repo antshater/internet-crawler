@@ -66,6 +66,18 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+        'pgsql_tests' => [
+            'driver' => 'pgsql',
+            'host' => 'postgres',
+            'port' => '5432',
+            'database' => 'internet_crawler_tests',
+            'username' => 'internet_crawler',
+            'password' => 'internet_crawler',
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

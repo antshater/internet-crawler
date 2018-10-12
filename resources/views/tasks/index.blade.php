@@ -37,7 +37,7 @@
                 <div>Original url: <a href="{{ $task->url }}">{{ $task->url }}</a></div>
                 @if($task->result_url)
                     <div>
-                        <a id="download-link-{{ $task->id }}" download href="{{ Storage::url($task->result_url) }}">Download</a>
+                        <a id="download-link-{{ $task->id }}" download href="{{ $task->resultUrl() }}">Download</a>
                     </div>
                 @endif
             </div>

@@ -10,7 +10,7 @@ use App\Task;
 class TasksController extends Controller {
 
     public function index() {
-        $tasks = Task::orderBy('id', 'DESC')->get()->all();
+        $tasks = Task::sorted()->get();
 
         return view('tasks.index', compact('tasks'));
     }

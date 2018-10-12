@@ -17,7 +17,7 @@ open http://internet-crawler.local in browser
 
 ## Api
 
-Api call creates new delayed job for file downloading
+Enqueues new task for file downloading
 ```
 [POST] /api/tasks
 - payload
@@ -26,11 +26,35 @@ Api call creates new delayed job for file downloading
   200 - {data: true}
   422 - {url: error message}
 ```
+Shows list of jobs
+```
+[GET] /api/tasks
+- responses
+  200 - [
+          {
+            id: 1,
+            status: pendind | downloading | complete | error
+            url: http://original.com/file
+            result_url: http://internet-crawler.local/download.csv
+            error: string | null
+          },
+          ...
+        ]
+```
 
 ## Command
-Command creates new delayed job for file downloading
+Enqueue new task for file downloading
 ```
-docker-compose exec php php artisan app:download-file
+docker-compose exec php php artisan tasks:new
 
 Follow instructions!
+```
+Shows list of jobs
+```
+docker-compose exec php php artisan tasks:list
+```
+## Tests
+```
+docker-compose exec php php artisan migrate --database=pgsql_tests
+docker-compose exec php php vendor/bin/phpunit --configuration=phpunit.xml
 ```

@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Storage;
 
 /**
  * App\Task
@@ -34,4 +36,12 @@ class Task extends Model {
         'url',
         'status',
     ];
+
+    public function scopeSorted(Builder $builder) {
+        $builder->orderBy('id', 'DESC');
+    }
+
+    public function resultUrl() {
+        return $this->result_url ? Storage::url($this->result_url) : null;
+    }
 }
