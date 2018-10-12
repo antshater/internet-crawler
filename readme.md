@@ -10,6 +10,7 @@ clone project to your folder, than
 cp .env.example .env
 docker-compose up -d
 docker-compose exec php composer install
+docker-compose exec php artisan migrate
 /etc/hosts -> {docker ip} internet-crawler.local
 open http://internet-crawler.local in browser
 ```

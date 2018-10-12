@@ -19,12 +19,8 @@ services:
       context: ./docker/postgres
     ports:
       - "9003:5432"
-    environment:
-      - POSTGRES_USER=internet_crawler
-      - POSTGRES_PASSWORD=internet_crawler
-      - POSTGRES_DB=internet_crawler
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data_123:/var/lib/postgresql/data
   horizon:
     build: ./docker/php
     command: /usr/bin/env php artisan horizon
@@ -33,5 +29,5 @@ services:
   redis:
     image: redis
 volumes:
-  postgres_data:
+  postgres_data_123:
     driver: "local"
